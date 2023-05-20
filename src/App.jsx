@@ -1,24 +1,32 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import Home from "./pages/Home";
+import Navbar from "./components/Navbar";
+import Login from "./components/Login";
+import Signup from "./components/Signup";
+import ProblemSet from "./components/ProblemSet";
+import SingleProblem from "./components/SingleProblem";
 
 const problems = [
   {
+    problemId: "1",
     title: "201. Bitwise AND of Numbers Range",
     difficulty: "Medium",
     acceptance: "42%",
   },
   {
+    problemId: "2",
     title: "201. Bitwise AND of Numbers Range",
     difficulty: "Medium",
     acceptance: "412%",
   },
   {
+    problemId: "3",
     title: "202. Happy Number",
     difficulty: "Easy",
     acceptance: "54.9%",
   },
   {
+    problemId: "4",
     title: "203. Remove Linked List Elements",
     difficulty: "Hard",
     acceptance: "42%",
@@ -35,10 +43,20 @@ function App() {
 
   return (
     <>
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/meetcode" element={<Home />} />
-    </Routes>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<ProblemSet problems={problems} />} />
+        <Route
+          path="/problemset/all/"
+          element={<ProblemSet problems={problems} />}
+        />
+        <Route path="/signup/" element={<Signup />} />
+        <Route path="/login/" element={<Login />} />
+        <Route
+          path="/problems/:id/"
+          element={<SingleProblem problems={problems} />}
+        />
+      </Routes>
     </>
   );
 }
