@@ -1,10 +1,10 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import Login from "./components/Login";
-import Signup from "./components/Signup";
-import ProblemSet from "./components/ProblemSet";
-import SingleProblem from "./components/SingleProblem";
+import Navbar from "./components/Navbar/Navbar";
+import Login from "./components/Login/Login";
+import Signup from "./components/Signup/Signup";
+import ProblemSet from "./components/ProblemSet/ProblemSet";
+import SingleProblem from "./components/SingleProblem/SingleProblem";
 
 const problems = [
   {
